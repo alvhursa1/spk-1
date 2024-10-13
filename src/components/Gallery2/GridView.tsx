@@ -21,7 +21,7 @@ export default function GridView({ artists }: GridViewProps) {
   const level3Ref = useRef<HTMLDivElement>(null);
 
   const loadImage = useCallback((artist: Artist) => {
-    const img = new (window as any).Image() as HTMLImageElement;
+    const img = document.createElement('img') as HTMLImageElement;
     img.src = `/images/${artist.images[0]}`;
     img.crossOrigin = 'anonymous';
     img.onload = () => {

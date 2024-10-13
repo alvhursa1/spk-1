@@ -64,7 +64,9 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
           {['grid', 'list'].map((view) => (
             <div
               key={view}
-              className="flex flex-col items-center relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
+              className={`flex flex-col items-center relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group ${
+                currentView === view ? 'bg-black' : ''
+              }`}
               onMouseEnter={() => view === 'grid' ? setIsHoveredGrid(true) : setIsHoveredList(true)}
               onMouseLeave={() => view === 'grid' ? setIsHoveredGrid(false) : setIsHoveredList(false)}
               onClick={() => handleViewChange(view as 'grid' | 'list')}

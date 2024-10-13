@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
 import StoreButton2 from '@/components/StoreButton2';
 import Fter3 from '@/components/Fter3';
 import HderLets from '@/components/HderLets';
@@ -8,8 +7,6 @@ import BnnerArtists from '@/components/BnnerArtists';
 import ArtistGallery from '@/components/Gallery2/ArtistGallery';
 
 const ArtistsPage: React.FC = () => {
-  // Estado para manejar la vista (Grid o List)
-  const [view, setView] = useState('grid');
 
   return (
     <div>
