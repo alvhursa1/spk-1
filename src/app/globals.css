@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Broone';
+  src: url('./fonts/Broone.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('./fonts/Satoshi-Light.otf') format('opentype');
+  font-weight: 100; /* Usar peso 100 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./fonts/Satoshi-Bold.otf') format('opentype');
+  font-weight: bold; /* O usar '700' para especificar el peso de la fuente */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('./fonts/Marcellus-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.font-broone {
+  font-family: 'Broone', sans-serif;
+}
+
+.font-marcellus {
+  font-family: 'Marcellus', serif;
+}
+
+.font-satoshi-light {
+  font-family: 'Satoshi-Light', sans-serif;
+  font-weight: lighter; /* Usar peso ligero */
+}
+
+.font-satoshi-bold {
+  font-family: 'Satoshi-Bold', sans-serif;
+  font-weight: bold; /* O usar '700' */
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+.bg-white * {
+  background-color: white !important;
+}
+
+.horiz-gallery-strip,
+.horiz-gallery-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  position: relative;
+}
+
+.project-wrap {
+  width: 50vw;
+  padding: 2rem;
+  box-sizing: content-box;
+}
