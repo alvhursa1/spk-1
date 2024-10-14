@@ -31,11 +31,12 @@ export default function ArtistGallery() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
       <ViewToggle currentView={view} onViewChange={handleViewChange} />
       <div className="view-container mt-20 opacity-0">
         {view === 'grid' ? <GridView artists={artists} /> : <ListView artists={artists} />}
       </div>
+      <div id="artist-gallery-end" />
     </div>
   )
 }

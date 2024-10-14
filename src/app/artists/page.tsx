@@ -14,15 +14,9 @@ const ArtistsPage: React.FC = () => {
       <div className="absolute top-0 left-0 w-full z-50">
         <HderLets />
       </div>
-      
-      {/* Banner de artistas */}
       <BnnerArtists />
-
-
-      {/* Botón adicional (StoreButton2) */}
-      <StoreButton2 />
       <ArtistGallery />
-      {/* Footer */}
+      <StoreButton2 />
       <Fter3 />
     </div>
   );

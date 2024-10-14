@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Link from 'next/link'
 
 interface ViewToggleProps {
   currentView: 'grid' | 'list'
@@ -15,23 +15,24 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
   const [isHoveredList, setIsHoveredList] = useState(false)
   const [isHoveredEnquire, setIsHoveredEnquire] = useState(false)
   const enquireButtonRef = useRef<HTMLAnchorElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     const enquireButton = enquireButtonRef.current
-    const container = containerRef.current
 
-    if (enquireButton && container) {
+    if (enquireButton) {
       ScrollTrigger.create({
-        trigger: container,
+        trigger: enquireButton,
         start: 'top top',
+        endTrigger: '#artist-gallery-end',
         end: 'bottom top',
         onEnter: () => {
           gsap.to(enquireButton, { 
             position: 'fixed',
             top: '10px',
+            right: '3%',
+            zIndex: 60,
             duration: 0.3 
           })
         },
@@ -39,6 +40,20 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
           gsap.to(enquireButton, { 
             position: 'absolute',
             top: '0',
+            right: '3%',
+            zIndex: 60,
+            duration: 0.3 
+          })
+        },
+        onLeave: () => {
+          gsap.to(enquireButton, { 
+            opacity: 0,
+            duration: 0.3 
+          })
+        },
+        onEnterBack: () => {
+          gsap.to(enquireButton, { 
+            opacity: 1,
             duration: 0.3 
           })
         }
@@ -49,7 +64,7 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
   }, [])
-  
+
   const handleViewChange = (view: 'grid' | 'list') => {
     onViewChange(view)
     if (typeof window !== 'undefined' && window.innerWidth < 768) {
@@ -58,7 +73,7 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
   }
 
   return (
-    <div ref={containerRef} className="relative">
+    <div className="relative">
       <div className="flex justify-between items-center pl-[3%] pr-[3%] mt-10 -mb-8">
         <div className="flex space-x-16">
           {['grid', 'list'].map((view) => (
@@ -82,27 +97,27 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
             </div>
           ))}
         </div>
-      </div>
-      <Link
-        ref={enquireButtonRef}
-        href="/enquire"
-        className="absolute top-0 right-[3%] flex items-center justify-center bg-black rounded-full px-4 py-2 cursor-pointer transition-all duration-500 ease-in-out z-50"
-        onMouseEnter={() => setIsHoveredEnquire(true)}
-        onMouseLeave={() => setIsHoveredEnquire(false)}
-      >
-        <div
-          className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out"
+        <Link
+          ref={enquireButtonRef}
+          href="/enquire"
+          className="flex items-center justify-center bg-black rounded-full px-4 py-2 cursor-pointer transition-all duration-500 ease-in-out z-60"
+          onMouseEnter={() => setIsHoveredEnquire(true)}
+          onMouseLeave={() => setIsHoveredEnquire(false)}
         >
           <div
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1rem] h-[1rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out ${
-              isHoveredEnquire ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-            }`}
-          />
-        </div>
-        <span className="ml-2 whitespace-nowrap text-[1.125rem] font-broone text-white">
-          Enquire to purchase
-        </span>
-      </Link>
+            className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out"
+          >
+            <div
+              className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1rem] h-[1rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out ${
+                isHoveredEnquire ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}
+            />
+          </div>
+          <span className="ml-2 whitespace-nowrap text-[1.125rem] font-broone text-white">
+            Enquire to purchase
+          </span>
+        </Link>
+      </div>
     </div>
   )
 }
