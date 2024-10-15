@@ -23,18 +23,20 @@ const works: Work[] = [
     { src: '/images/work10.png', title: 'Type setting design', description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Type setting design description.' },
 ]
 
-const WorkGallery: React.FC = () => {
+const WorkGalleryCuad: React.FC = () => {
     const [selectedWork, setSelectedWork] = useState<Work | null>(null)
 
     return (
-        <div className="relative w-full h-[280vh] mt-[5%]">
-            <div className="flex w-full h-full">
+        <div className="relative w-full mt-[5%]">
+            <div className="flex w-full">
                 {/* Columna 1 */}
                 <div className="w-[70%] flex flex-wrap">
                     {works.map((work, index) => (
                         <div
                             key={index}
-                            className={`w-1/2 h-[50vh] relative ${selectedWork && selectedWork.src !== work.src ? 'opacity-50' : 'opacity-100'}`}
+                            className={`w-1/2 aspect-square relative ${
+                                selectedWork && selectedWork.src !== work.src ? 'opacity-50' : 'opacity-100'
+                            }`}
                             onMouseEnter={() => setSelectedWork(work)}
                             onMouseLeave={() => setSelectedWork(null)}
                         >
@@ -53,10 +55,10 @@ const WorkGallery: React.FC = () => {
                 </div>
 
                 {/* Columna 2 */}
-                <div className="w-[30%] p-8 flex flex-col items-center justify-center sticky top-0 h-screen">
+                <div className="w-[30%] px-8 pt-2 flex flex-col items-center justify-center sticky top-0 h-screen">
                     {selectedWork && (
                         <>
-                            <div className="relative w-1/2 h-64 mb-4">
+                            <div className="relative w-3/4 aspect-square mb-4">
                                 <Image
                                     src={selectedWork.src}
                                     alt={selectedWork.title}
@@ -64,8 +66,8 @@ const WorkGallery: React.FC = () => {
                                     objectFit="contain"
                                 />
                             </div>
-                            <h2 className="text-2xl font-bold mb-4 font-broone">{selectedWork.title}</h2>
-                            <p className="text-base leading-tight font-satoshi-light">
+                            <h2 className="text-2xl font-bold mb-4 font-broone text-[1.125rem]">{selectedWork.title}</h2>
+                            <p className="text-base leading-tight font-satoshi-light overflow-y-auto max-h-[60vh] text-[1rem]">
                                 {selectedWork.description}
                             </p>
                         </>
@@ -76,4 +78,4 @@ const WorkGallery: React.FC = () => {
     )
 }
 
-export default WorkGallery
+export default WorkGalleryCuad
