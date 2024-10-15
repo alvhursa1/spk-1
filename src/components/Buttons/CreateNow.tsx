@@ -23,8 +23,8 @@ export default function StoreButton() {
     }
 
     return (
-        <Link href="/store" className="hidden md:block mt-2">
-        <div className="flex flex-col items-center mt-14 mb-44 ">
+        <Link href="/contact" className="hidden md:block mt-2">
+        <div className="flex flex-col items-center mt-14 mb-20 ">
             <div
                 className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
                 onMouseEnter={() => setIsHovered(true)}
@@ -42,8 +42,7 @@ export default function StoreButton() {
             {/* Texto "About us" debajo del círculo */}
 
                 <span className="text-[1.125rem] font-broone whitespace-nowrap mt-4">
-                If you don&apos;t want to hire an artist, you can buy
-                art in our store.
+                Create now
                 </span>
 
         </div>

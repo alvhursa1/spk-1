@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const FterEnquire = () => {
     return (
@@ -13,8 +14,11 @@ const FterEnquire = () => {
                 {/* Columna 2 */}
                 <div className="w-1/2"></div>
                 {/* Columna 3 */}
-                <div className="w-1/4 flex items-start justify-end pr-[3%]">
+                <div className="w-1/4 flex flex-col items-end pr-[3%]">
                     <a href="mailto:team@spektrumagency.us" className="text-white">team@spektrumagency.us</a>
+                    <Link href="/faqs" className="text-white mt-2">
+                        FAQs
+                    </Link>
                 </div>
             </div>
 
@@ -22,13 +26,13 @@ const FterEnquire = () => {
             <div className="flex w-full my-[5%]">
                 {/* Columna 1 */}
                 <div className="w-1/4 flex justify-center">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/spektrumagency/">
                         <Image src="/LN.svg" alt="LN Logo" layout="intrinsic" objectFit="contain" width={50} height={50} />
                     </a>
                 </div>
                 {/* Columna 2 */}
                 <div className="w-1/4 flex justify-center">
-                    <a href="#">
+                    <a href="https://www.instagram.com/spektrum.agency/">
                         <Image src="/IG.svg" alt="IG Logo" layout="intrinsic" objectFit="contain" width={42} height={42} />
                     </a>
                 </div>

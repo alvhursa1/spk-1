@@ -117,7 +117,7 @@ export default function BannerText() {
 
         {/* Párrafo 3 */}
         <Link
-          href="/talk"
+          href="/contact"
           className={`absolute top-[50%] left-[3%] flex items-center ${brooneFont.className} pointer-events-auto`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}

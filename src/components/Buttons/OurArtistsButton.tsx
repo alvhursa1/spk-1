@@ -23,6 +23,7 @@ export default function StoreButton() {
     }
 
     return (
+        <Link href="/artists">
         <div className="flex flex-col justify-center items-center h-screen -mt-28 -mb-28">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
             <Link href="/artists">
@@ -42,13 +43,14 @@ export default function StoreButton() {
             </Link>
             
             {/* Texto 'Our artists' siempre visible */}
-            <Link href="/artists">
+
                 <span
                     className="block mt-2 text-center whitespace-nowrap text-[1.125rem] font-broone transition-all duration-500 ease-in-out opacity-100 translate-y-0"
                 >
                     Our artists
                 </span>
-            </Link>
+
         </div>
+        </Link>
     )
 }

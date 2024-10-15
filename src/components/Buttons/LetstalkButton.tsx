@@ -23,6 +23,7 @@ export default function StoreButton() {
     }
 
     return (
+        <Link href="/contact" className="hidden md:block">
         <div
             className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
             onMouseEnter={() => setIsHovered(true)}
@@ -37,13 +38,14 @@ export default function StoreButton() {
             />
 
             {/* Texto "Let's talk" siempre visible */}
-            <Link href="/about" className="hidden md:block">
+
                 <span
                     className="absolute left-full ml-2 whitespace-nowrap text-[1.125rem] top-1/2 transform -translate-y-1/2 font-broone transition-all duration-500 ease-in-out opacity-100 translate-x-0"
                 >
                     Let&apos;s talk
                 </span>
-            </Link>
+
         </div>
+        </Link>
     )
 }

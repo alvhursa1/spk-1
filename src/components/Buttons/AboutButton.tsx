@@ -23,12 +23,14 @@ export default function StoreButton() {
     }
 
     return (
+        <Link href="/about" className="hidden md:block">
         <div
             className=" flex flex-col items-center mt-10 relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={handleStoreClick}
         >
+
             {/* Círculo pequeño que aparece al hacer hover */}
             <div
                 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1rem] h-[1rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out ${
@@ -37,13 +39,13 @@ export default function StoreButton() {
             />
 
             {/* Texto "Our artists" siempre visible */}
-            <Link href="/about" className="hidden md:block">
+
                 <span
                     className="absolute left-full ml-2 whitespace-nowrap text-[1.125rem] top-1/2 transform -translate-y-1/2 font-broone transition-all duration-500 ease-in-out opacity-100 translate-x-0"
                 >
                     About us
                 </span>
-            </Link>
         </div>
+                    </Link>
     )
 }

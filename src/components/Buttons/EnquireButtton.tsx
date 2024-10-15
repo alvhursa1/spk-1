@@ -23,6 +23,7 @@ export default function StoreButton() {
     }
 
     return (
+        <Link href="/enquire-to-purcharse" className="hidden md:block mt-2">
         <div className="flex flex-col items-center mt-14 -ml-60">
             <div
                 className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
@@ -39,11 +40,12 @@ export default function StoreButton() {
             </div>
 
             {/* Texto "About us" debajo del círculo */}
-            <Link href="/about" className="hidden md:block mt-2">
+
                 <span className="text-[1.125rem] font-broone whitespace-nowrap">
                 Enquire to purchase
                 </span>
-            </Link>
+
         </div>
+        </Link>
     )
 }

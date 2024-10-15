@@ -99,7 +99,7 @@ export default function ViewToggle({ currentView, onViewChange }: ViewToggleProp
         </div>
         <Link
           ref={enquireButtonRef}
-          href="/enquire"
+          href="/enquire-to-purcharse"
           className="flex items-center justify-center bg-black rounded-full px-4 py-2 cursor-pointer transition-all duration-500 ease-in-out z-60"
           onMouseEnter={() => setIsHoveredEnquire(true)}
           onMouseLeave={() => setIsHoveredEnquire(false)}
