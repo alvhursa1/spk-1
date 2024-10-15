@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { gsap } from 'gsap';
 import Image from 'next/image';
-import AboutButton from './AboutButton'; // Importar el componente AboutButton
+import AboutButton from '../Buttons/AboutButton'; // Importar el componente AboutButton
 
 const TextAnimation: React.FC = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);

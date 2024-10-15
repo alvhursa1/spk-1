@@ -3,14 +3,14 @@
 import localFont from 'next/font/local';
 
 // Fuentes personalizadas cargadas localmente
-const marcellusFont = localFont({ src: '../app/fonts/Marcellus-Regular.ttf' });
-const brooneFont = localFont({ src: '../app/fonts/Broone.otf' });
-const satoshiLight = localFont({ src: '../app/fonts/Satoshi-Light.otf' });
-const satoshiBold = localFont({ src: '../app/fonts/Satoshi-Bold.otf' });
+const marcellusFont = localFont({ src: './../../app/fonts/Marcellus-Regular.ttf' });
+const brooneFont = localFont({ src: './../../app/fonts/Broone.otf' });
+const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' });
+const satoshiBold = localFont({ src: './../../app/fonts/Satoshi-Bold2.otf' });
 
 export default function TextHme1() {
   return (
-    <div className="relative w-full h-auto">
+    <div className="relative w-full h-auto leading-tight">
       {/* Flex de 2 columnas para el Párrafo 1 */}
       <div className="flex w-full">
         {/* Columna izquierda con el Párrafo 1 */}

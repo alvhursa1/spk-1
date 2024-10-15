@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import { artists } from '@/data/artists'
-import GridView from './GridView'
-import ListView from './ListView'
-import ViewToggle from './ViewToogle'
+import GridView from '@/components/Artists/Gallery/GridView'
+import ListView from '@/components/Artists/Gallery/ListView'
+import ViewToggle from '@/components/Artists/Gallery/ViewToogle'
 import { gsap } from 'gsap'
 
 type View = 'grid' | 'list'

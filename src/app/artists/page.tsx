@@ -1,10 +1,10 @@
 'use client';
 
-import StoreButton2 from '@/components/StoreButton2';
-import Fter3 from '@/components/Fter3';
-import HderLets from '@/components/HderLets';
-import BnnerArtists from '@/components/BnnerArtists';
-import ArtistGallery from '@/components/Gallery2/ArtistGallery';
+import StoreButton2 from '@/components/Buttons/StoreButton2';
+import Fter3 from '@/components/HeadFooter/Fter3';
+import HderLets from '@/components/HeadFooter/HderLets';
+import BnnerArtists from '@/components/Artists/BnnerArtists';
+import ArtistGallery from '@/components/Artists/Gallery/ArtistGallery';
 
 const ArtistsPage: React.FC = () => {
 

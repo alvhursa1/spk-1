@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import localFont from 'next/font/local'
 
 // Cargar la fuente local Satoshi-Light
-const satoshiLight = localFont({ src: '../app/fonts/Satoshi-Light.otf' })
+const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' })
 
 export default function BannerWithText() {
   // Estados para controlar las interacciones y las animaciones

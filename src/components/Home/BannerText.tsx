@@ -6,9 +6,9 @@ import Link from 'next/link'
 import localFont from 'next/font/local'
 
 // Fuentes personalizadas cargadas localmente
-const satoshiLight = localFont({ src: '../app/fonts/Satoshi-Light.otf' })
-const marcellusFont = localFont({ src: '../app/fonts/Marcellus-Regular.ttf' })
-const brooneFont = localFont({ src: '../app/fonts/Broone.otf' })
+const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' })
+const marcellusFont = localFont({ src: './../../app/fonts/Marcellus-Regular.ttf' })
+const brooneFont = localFont({ src: './../../app/fonts/Broone.otf' })
 
 export default function BannerText() {
   const [logoHeight, setLogoHeight] = useState(0)
@@ -71,9 +71,9 @@ export default function BannerText() {
       </div>
 
       {/* El resto del contenido permanece igual */}
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 w-full h-full leading-tight">
         {/* Párrafo 1 */}
-        <div className={`${marcellusFont.className} text-left pt-[10%]`}>
+        <div className={`${marcellusFont.className} text-left pt-[10%] leading-tight`}>
           <p
             style={{
               fontSize: '2.5rem',
@@ -97,7 +97,7 @@ export default function BannerText() {
         </div>
 
         {/* Párrafo 2 */}
-        <div className={`absolute top-[30%] right-[3%] ${satoshiLight.className}`}>
+        <div className={`absolute top-[30%] right-[3%] leading-tight ${satoshiLight.className}`}>
           <p
             style={{
               fontSize: '1rem',

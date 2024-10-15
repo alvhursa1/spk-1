@@ -1,16 +1,16 @@
-import EnquireButton from "./EnquireButtton";
+import EnquireButton from "../Buttons/EnquireButtton";
 
 export default function TwoColumnLayout() {
   return (
     <section className="relative z-10 pt-[15%]">
       <div className="flex justify-between">
         {/* Columna izquierda: Texto */}
-        <div className="w-1/2 z-10 text-left">
+        <div className="w-1/2 z-10 text-left leading-tight">
           {/* Texto del título */}
-          <h1 className="font-marcellus text-[2.5rem] pl-[3%] leading-none">
+          <h1 className="font-marcellus text-[2.5rem] pl-[10%] ">
             Meet our
           </h1>
-          <h1 className="line-artists font-broone text-[2.5rem] pl-[24%] leading-none text-white">
+          <h1 className="line-artists font-broone text-[2.5rem] pl-[24%] text-white">
             Artists
           </h1>
 

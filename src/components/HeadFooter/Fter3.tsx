@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import LetstalkButton from './LetstalkButton';
+import LetstalkButton from '../Buttons/LetstalkButton';
 
 const Fter3: React.FC = () => {
   return (

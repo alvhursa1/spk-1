@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import EnquireButton from '../EnquireButtton';
+import EnquireButton from '../Buttons/EnquireButtton';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 

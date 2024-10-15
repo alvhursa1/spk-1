@@ -1,11 +1,11 @@
-import BannerText from "@/components/BannerText";
-import Hder from "@/components/Hder";
-import HorizontalScroll from "@/components/HorizontalScroll";
-import TextHme1 from "@/components/TextHme1";
-import OurArtistsButton from "@/components/OurArtistsButton";
-import TextHme2 from "@/components/TextHme2";
-import StoreButton from "@/components/StoreButton";
-import Fter3 from "@/components/Fter3";
+import BannerText from "@/components/Home/BannerText";
+import Hder from "@/components/HeadFooter/Hder";
+import HorizontalScroll from "@/components/Home/HorizontalScroll";
+import TextHme1 from "@/components/Home/TextHme1";
+import OurArtistsButton from "@/components/Buttons/OurArtistsButton";
+import TextHme2 from "@/components/Home/TextHme2";
+import StoreButton from "@/components/Buttons/StoreButton";
+import Fter3 from "@/components/HeadFooter/Fter3";
 
 export default function Home() {
   return (

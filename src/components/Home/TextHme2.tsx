@@ -1,12 +1,12 @@
 'use client';
 
 import localFont from 'next/font/local';
-import AboutButton from './AboutButton'; // Importar el componente AboutButton
-import Scroll from './Scroll'; // Importar el componente Scroll
+import AboutButton from '../Buttons/AboutButton'; // Importar el componente AboutButton
+import Scroll from './ScrollText'; // Importar el componente Scroll
 
 // Fuentes personalizadas cargadas localmente
-const satoshiLight = localFont({ src: '../app/fonts/Satoshi-Light.otf' });
-const satoshiBold = localFont({ src: '../app/fonts/Satoshi-Bold.otf' });
+const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' });
+const satoshiBold = localFont({ src: './../../app/fonts/Satoshi-Bold2.otf' });
 
 const TextHme2: React.FC = () => {
 
@@ -65,7 +65,7 @@ const TextHme2: React.FC = () => {
   // Renderizar párrafos con textos en bold
   const renderText = (textArray: { text: string; bold?: string; className?: string }[]) => {
     return textArray.map((line, index) => (
-      <p key={index} className={`text-left ${line.className || ''} ${satoshiLight.className}`} style={{ fontSize: 'calc(13.29577px + .18779vw)', lineHeight: '1.5', color: 'white' }}>
+      <p key={index} className={`text-left ${line.className || ''} ${satoshiLight.className}`} style={{ fontSize: '1rem', lineHeight: '1.25', color: 'white' }}>
         {line.text}
         {line.bold && <span className={`${satoshiBold.className}`}> {line.bold}</span>}
       </p>
@@ -73,7 +73,7 @@ const TextHme2: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-auto space-y-8 -mt-80">
+    <div className="w-full h-auto space-y-8 -mt-80 leading-tight">
       {/* Flex de 2 columnas, colocando Scroll.tsx en la columna izquierda */}
       <div className="flex">
         <div className="w-1/2">
