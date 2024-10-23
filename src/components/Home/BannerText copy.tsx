@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import localFont from 'next/font/local'
-import BnnerImageSmoot from './BnnerImageSmoot'
 
 // Fuentes personalizadas cargadas localmente
 const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' })
@@ -51,8 +50,24 @@ export default function BannerText() {
       ref={bannerRef}
     >
       {/* Imagen de fondo con z-index 0 y efecto de movimiento suave */}
-      <div className="absolute inset-0 z-0">
-        <BnnerImageSmoot mousePosition={mousePosition} />
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{ 
+          height: '100vh', 
+          width: '90vw', 
+          overflow: 'hidden',
+          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
+          transition: 'transform 0.4s ease-out'
+        }}
+      >
+        <Image
+          src="/images/figures/banner-1-home-specktrum.webp"
+          alt="Banner de Spektrum"
+          layout="fill"
+          quality={100}
+          objectFit="contain"
+          objectPosition="center center"
+        />
       </div>
 
       {/* El resto del contenido permanece igual */}

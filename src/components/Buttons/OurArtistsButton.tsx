@@ -26,7 +26,7 @@ export default function StoreButton() {
         <Link href="/artists">
         <div className="flex flex-col justify-center items-center h-screen -mt-28 -mb-28">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
-            <Link href="/artists">
+
                 <div
                     className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
                     onMouseEnter={() => setIsHovered(true)}
@@ -40,7 +40,7 @@ export default function StoreButton() {
                         }`}
                     />
                 </div>
-            </Link>
+
             
             {/* Texto 'Our artists' siempre visible */}
 

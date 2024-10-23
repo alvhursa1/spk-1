@@ -15,7 +15,7 @@ export default function Home() {
       </div>
       <BannerText />
       <TextHme1 />
-      <HorizontalScroll />
+{/*       <HorizontalScroll /> */}
       <OurArtistsButton />
       <TextHme2 />
       <StoreButton />
