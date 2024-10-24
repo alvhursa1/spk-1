@@ -6,6 +6,7 @@ import TextHme2 from "@/components/Home/TextHme2";
 import StoreButton from "@/components/Buttons/StoreButton";
 import Fter3 from "@/components/HeadFooter/Fter3";
 import HorizScrollHome from "@/components/Home/HorizScrollHome";
+import AnimatedLogo from "@/components/Logo/AnimatedLogo";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HorizScrollHome />
       <OurArtistsButton />
       <TextHme2 />
+      <AnimatedLogo />
       <StoreButton />
       <Fter3 />
     </div>
