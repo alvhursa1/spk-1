@@ -78,7 +78,7 @@ export default function AnimatedLogo() {
 
   return (
     <div ref={containerRef} className="h-[300vh]">
-      <div className="sticky top-0 h-screen flex items-center justify-center bg-gray-900">
+      <div className="sticky top-0 h-screen flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1956 1609"
