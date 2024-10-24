@@ -24,7 +24,7 @@ export default function StoreButton() {
 
     return (
         <Link href="/artists">
-        <div className="flex flex-col justify-center items-center h-screen -mt-28 -mb-28">
+        <div className="flex flex-col justify-center items-center h-screen -mt-60 -mb-28">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
 
                 <div

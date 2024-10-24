@@ -1,10 +1,10 @@
 import React from "react";
 import AboutGalleryImg from "@/components/about/AboutGalleryImg";
 
-const about = () => {
-  return(
+const About = () => {
+  return (
     <AboutGalleryImg />
-  )
+  );
 };
 
-export default about;
+export default About;
