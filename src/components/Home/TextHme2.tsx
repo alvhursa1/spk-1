@@ -1,17 +1,27 @@
 'use client';
 
 import localFont from 'next/font/local';
-import AboutButton from '../Buttons/AboutButton'; // Importar el componente AboutButton
-import Scroll from './ScrollText'; // Importar el componente Scroll
+import { useState, useRef } from 'react';
+import AboutButton from '../Buttons/AboutButton';
+import Scroll from './ScrollText';
+import BnnerImageSmoot2 from '../Home/BnnerImageSmoot2';
 
-// Fuentes personalizadas cargadas localmente
 const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' });
 const satoshiBold = localFont({ src: './../../app/fonts/Satoshi-Bold2.otf' });
 
 const TextHme2: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const bannerRef = useRef<HTMLDivElement>(null)
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (bannerRef.current) {
+      const rect = bannerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: (event.clientX - rect.left) / rect.width,
+        y: (event.clientY - rect.top) / rect.height,
+      });
+    }
+  };
 
-
-  // Párrafo 1
   const paragraph1 = [
     { text: 'We are an Illustration', bold: 'Illustration' },
     { text: 'and design agency', bold: 'and design agency' },
@@ -22,7 +32,6 @@ const TextHme2: React.FC = () => {
     { text: 'creative endeavors.', bold: '' },
   ];
 
-  // Párrafo 2
   const paragraph2 = [
     { text: 'With a team of over 70 talented artists with unique', bold: '70 talented artists' },
     { text: 'styles and design lines we aim to provide a wide', bold: '' },
@@ -31,7 +40,6 @@ const TextHme2: React.FC = () => {
     { text: 'designs.', bold: 'designs.' },
   ];
 
-  // Párrafo 3 con los paddings solicitados
   const paragraph3 = [
     {
       text: (
@@ -62,7 +70,6 @@ const TextHme2: React.FC = () => {
     },
   ];
 
-  // Renderizar párrafos con textos en bold
   const renderText = (textArray: { text: string; bold?: string; className?: string }[]) => {
     return textArray.map((line, index) => (
       <p key={index} className={`text-left ${line.className || ''} ${satoshiLight.className}`} style={{ fontSize: '1rem', lineHeight: '1.25', color: 'white' }}>
@@ -73,8 +80,7 @@ const TextHme2: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-auto space-y-8 -mt-80 leading-tight">
-      {/* Flex de 2 columnas, colocando Scroll.tsx en la columna izquierda */}
+    <div className="w-full h-auto space-y-8 -mt-80 leading-tight" onMouseMove={handleMouseMove} ref={bannerRef}>
       <div className="flex">
         <div className="w-1/2">
           <Scroll />
@@ -82,7 +88,6 @@ const TextHme2: React.FC = () => {
         <div className="w-1/2"></div>
       </div>
 
-      {/* Segunda sección de texto (flex de 4 columnas) */}
       <div className="flex">
         <div className="w-[60%] pl-[20%] -mt-36">{renderText(paragraph1)}</div>
         <div className="w-[15%]"></div>
@@ -90,7 +95,6 @@ const TextHme2: React.FC = () => {
         <div className="w-[15%]"></div>
       </div>
 
-      {/* Tercera sección de texto (flex de 2 columnas) */}
       <div className="flex">
         <div className="w-1/2"></div>
         <div className="w-1/2 text-right pt-5">
@@ -98,24 +102,31 @@ const TextHme2: React.FC = () => {
         </div>
       </div>
 
-      {/* Cuarta sección de texto (Párrafo 3 con padding solicitado) */}
-      <div className="flex">
+      <div className="flex ">
         <div className="w-1/2 pt-10">
           {paragraph3.map((line, index) => (
             <p key={index} className="leading-none" style={{ fontSize: 'calc(22.29577px + .18779vw)', color: 'white', paddingLeft: line.paddingLeft }}>
               {line.text}
             </p>
+            
           ))}
+          <div className='flex justify-center items-center mt-10'>
+          <AboutButton />
+          </div>
+
         </div>
-        <div className="w-1/2"></div>
+        <div className="w-1/2">
+
+        </div>
       </div>
 
-      {/* Flex container con dos columnas (con AboutButton) */}
-      <div className="flex justify-between mt-24">
+      <div className="flex justify-between">
         <div className="w-1/2 flex justify-center items-center pt-6">
-          <AboutButton />
+
         </div>
-        <div className="w-1/2" />
+        <div className="relative w-full h-[100vh] inset-0 z-0 -mt-60" onMouseMove={handleMouseMove} ref={bannerRef}>
+          <BnnerImageSmoot2 mousePosition={mousePosition} />
+        </div>
       </div>
     </div>
   );
