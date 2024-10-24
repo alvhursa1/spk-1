@@ -20,7 +20,10 @@ export default function Home() {
       <OurArtistsButton />
       <TextHme2 />
       <AnimatedLogo />
-      <StoreButton />
+      <div className="-mt-60">
+        <StoreButton />
+      </div>
+
       <Fter3 />
     </div>
   );

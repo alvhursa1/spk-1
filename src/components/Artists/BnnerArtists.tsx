@@ -1,11 +1,14 @@
 import EnquireButton from "../Buttons/EnquireButtton";
+import BnnerImageSmootArtists from "../ImageSmoot/BnnerImageSmootArtists";
 
-export default function TwoColumnLayout() {
+
+export default function TwoColumnLayout() { 
+  
   return (
-    <section className="relative z-10 pt-[15%]">
+
       <div className="flex justify-between">
         {/* Columna izquierda: Texto */}
-        <div className="w-1/2 z-10 text-left leading-tight">
+        <div className="w-1/2 z-10 text-left leading-tight pt-[10%]">
           {/* Texto del título */}
           <h1 className="font-marcellus text-[2.5rem] pl-[10%] ">
             Meet our
@@ -50,10 +53,10 @@ export default function TwoColumnLayout() {
         </div>
 
         {/* Columna derecha: Imagen */}
-        <div className="w-1/2">
-
-        </div>
+        <div className="pr-[5%] pt-[3%]">
+        <BnnerImageSmootArtists  />
       </div>
-    </section>
+      </div>
+
   )
 }
